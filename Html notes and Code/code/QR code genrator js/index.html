@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Genrator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>QR Code Genrator</h1>
+      <div class="image">
+        <img src="no-image.jpg" alt="" id="image" />
+      </div>
+      <div class="form">
+        <input type="text" id="content" placeholder="Type Here" />
+        <button id="btncreate">Create Qr code</button>
+      </div>
+    </div>
+
+    <script>
+      let image = document.getElementById("image");
+      let content = document.getElementById("content");
+      let btncreate = document.getElementById("btncreate");
+      btncreate.onclick = () => {
+        if (content.value == " ") return;
+        image.src = `https://quickchart.io/qr?text=${content.value}&size=500x500&data`;
+        content.value="";
+      };
+    </script>
+  </body>
+</html>
